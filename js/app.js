@@ -17,6 +17,29 @@
 		};
 	});
 
+	app.controller('ReviewController', function(){
+		this.review = {};
+
+		this.addReview = function(product) {
+			product.reviews.push(this.review);
+			this.review = {};
+		};
+	});
+
+	app.directive('productTitle', function(){
+		return{
+			restrict: 'E',
+			templateUrl: 'product-title.html'
+		};
+	});
+
+	app.directive('productPanels', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'product-panels.html'
+		};
+	});
+
 	var gems = [
 		{
 			name: 'Dodecahedron',
@@ -28,7 +51,14 @@
 					full: 'img/logo.png',
 					thumb: 'img/logo.png'
 				}
-			]
+			],
+			reviews: [
+				{
+					stars: 5,
+					body: "I love this product!",
+					author: "fakeEmail@fake.org"
+				}
+			],
 		},
 		{
 			name: 'Another Product',
@@ -40,7 +70,14 @@
 					full: 'img/logo.png',
 					thumb: 'img/logo.png'
 				}
-			]
+			],
+			reviews: [
+				{
+					stars: 5,
+					body: "I love this product!",
+					author: "fakeEmail@fake.org"
+				}
+			],
 		}
 	];
 

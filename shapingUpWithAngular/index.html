@@ -15,11 +15,9 @@
 <ul class="list-group">
 	<li class="list-group-item" ng-repeat="product in store.products | orderBy:'-price'">
 		<product-title></product-title>
-		<product-panels ng-controller="PanelController as panel">
-			
-
+		<product-panels>
 			<!-- These are the panels that are shown depending on which element declared above you click -->
-			<div class="panel" ng-show="panel.isSelected(1)">
+			<div class="panel" ng-show="panels.isSelected(1)">
 				<h4>Description</h4>
 				<blockquote>{{product.description}}</blockquote>
 				<h4>Reviews</h4>
